@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="this"
+             x:Class="CurrencyControl.CustomControl.CurrencyControl">
+  <ContentView.Content>
+        <Grid>
+            <Entry FontSize="20" Keyboard="Numeric" Text="{Binding Source={x:Reference this},Path=Amount}"  x:Name="txtAmmount"  Unfocused="txtAmmount_Unfocused" IsVisible="False" Grid.Row="0"  >
+            </Entry>
+
+            <Label FontSize="20" x:Name="lblDisplayAmount" IsVisible="True" Grid.Row="0" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ForDisplayTextBox" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
